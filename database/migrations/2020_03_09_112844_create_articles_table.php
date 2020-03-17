@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('link');
             $table->string('description');
             $table->string('caption');
+            $table->longText('content');
             $table->foreign('journalist_id')->references('id')
                 ->on('journalistes')->onDelete('cascade');
             });

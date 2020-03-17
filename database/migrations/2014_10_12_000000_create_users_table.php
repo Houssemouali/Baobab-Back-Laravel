@@ -11,6 +11,15 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+
+    public $timestamps = false;
+
+    const UPDATED_AT = null;
+
+    public function setUpdatedAt($value)
+    {
+        return $this;
+    }
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
