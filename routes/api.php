@@ -24,6 +24,10 @@ Route::get('journalist/{id}','JournalistController@show');
 Route::get('article','ArticleController@index');
 Route::get('article/{id}','ArticleController@show');
 Route::post('article','ArticleController@store');
+//category
+Route::post('category','CategoryController@store');
+Route::get('category','CategoryController@index');
+Route::get('category/{id}','CategoryController@show');
 //auth & register
 Route::post('/register','AuthController@register');
 Route::post('/login','AuthController@login');

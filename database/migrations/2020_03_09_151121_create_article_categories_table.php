@@ -13,14 +13,14 @@ class CreateArticleCategoriesTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('article_categories')) {
+       // if(!Schema::hasTable('article_categories')) {
             Schema::create('article_categories', function (Blueprint $table) {
                 $table->integer('article_id')->unsigned();
-                $table->integer('category_id')->unsigned();
                 $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+                $table->integer('category_id')->unsigned();
                 $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             });
-        }
+       // }
     }
 
     /**

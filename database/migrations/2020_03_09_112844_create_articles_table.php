@@ -20,11 +20,10 @@ class CreateArticlesTable extends Migration
             $table->timestamp('createdAt');
             $table->unsignedInteger('journalist_id')->nullable();
             $table->string('link');
-            $table->string('description');
-            $table->string('caption');
+            $table->string('titre');
             $table->longText('content');
             $table->foreign('journalist_id')->references('id')
-                ->on('journalistes')->onDelete('cascade');
+                ->on('users')->onDelete('cascade');
             });
 //        Schema::table('articles',function(Blueprint $table){
 //            $table->foreign('journalist_id')->references('id')
